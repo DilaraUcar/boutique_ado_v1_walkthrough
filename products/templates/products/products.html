@@ -102,7 +102,6 @@
                         </div>
                     </div>
                 </div>
-
                 {% if forloop.counter|divisibleby:1 %}
                 <div class="col-12 d-sm-none mb-5">
                     <hr>
@@ -148,10 +147,10 @@
         var selector = $(this);
         var currentUrl = new URL(window.location);
 
-        var selesctedVal = selector.val();
-        if (selesctedVal != "reset") {
-            var sort = selesctedVal.split("_")[0];
-            var direction = selesctedVal.split("_")[1];
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
 
             currentUrl.searchParams.set("sort", sort);
             currentUrl.searchParams.set("direction", direction);
