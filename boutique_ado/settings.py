@@ -30,8 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['boutique-ado-walkthrough-ci-16088764afe8.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['boutique-ado-walkthrough-ci-16088764afe8.herokuapp.com', 'localhost', '8000-dilaraucar-boutiqueadov-5ylgbrrtoyy.ws-eu111.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-dilaraucar-boutiqueadov-5ylgbrrtoyy.ws-eu111.gitpod.io/', 'https://8000-dilaraucar-boutiqueadov-5ylgbrrtoyy.ws-eu111.gitpod.io']
 
 # Application definition
 
@@ -99,13 +100,13 @@ TEMPLATES = [
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-AUTHENTICATION_BACKENDS = [
+AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
-]
+)
 
 SITE_ID = 1
 
